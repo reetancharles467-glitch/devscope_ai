@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>DevScope AI | GitHub Developer Analyzer</title>
+<meta name="description" content="DevScope AI analyzes any public GitHub profile: stats, languages, top repositories and a developer score.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🔭%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="bg" aria-hidden="true"></div>
+<header class="top wrap">
+  <a class="brand" href="./"><span class="logo">🔭</span> DevScope <b>AI</b></a>
+  <button id="theme" class="icon" type="button" aria-label="Toggle dark or light mode">🌓</button>
+</header>
+<main class="wrap">
+  <section class="hero">
+    <h1>Analyze. Understand. <span class="grad">Grow.</span></h1>
+    <p>Enter any public GitHub username to get a full developer report with stats, languages and a developer score.</p>
+    <form id="form" class="search glass" autocomplete="off">
+      <input id="user" type="text" placeholder="e.g. torvalds" aria-label="GitHub username" maxlength="39" spellcheck="false" required>
+      <button id="go" class="btn" type="submit">Analyze</button>
+    </form>
+  </section>
+  <div id="state" aria-live="polite"></div>
+  <div id="result" hidden>
+    <div class="actions">
+      <button id="copy" class="btn ghost" type="button">🔗 Copy profile link</button>
+      <button id="share" class="btn ghost" type="button">📤 Share analysis</button>
+      <button id="png" class="btn ghost" type="button">🖼️ Export PNG</button>
+    </div>
+    <div id="report"></div>
+  </div>
+</main>
+<footer class="wrap foot">Built by Reetan Charles · Data from the GitHub REST API</footer>
+<div id="toast" class="toast" role="status"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
